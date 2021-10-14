@@ -1,7 +1,7 @@
 # Footprint
 Record your past
 
-## package
+## Package
 打包你的文件内容，打包项目文件还是用的pyinstall
 
 ```python
@@ -51,7 +51,7 @@ _{fp}_COMPLETE=zsh_source {fp} > ~/.{fp}-complete.zsh
 bash同样操作， 把zsh改成bash就可以了
 
 
-## example
+## Example
 ```bash
 # 获取帮助
 python main.py --help
