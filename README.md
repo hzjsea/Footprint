@@ -2,6 +2,9 @@
 Record your past
 
 ## package
+打包你的文件内容，打包项目文件还是用的pyinstall
+
+
 
 ## example
 ```bash
