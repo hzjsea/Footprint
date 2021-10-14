@@ -29,7 +29,7 @@ source venv/bin/activate
 pip install --editable .
 ```
 
-## 自动补全
+## Autocomplete
 
 ```bash
 
