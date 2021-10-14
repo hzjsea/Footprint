@@ -51,7 +51,8 @@ def input(text: str):
 @click.option("-a", "--all", is_flag=True, show_default="flag(标注) is true")
 @click.option("-d", "--day", type=int,  default=None, show_default="根据天数输出, 1-31")
 @click.option("-m", "--month", type=int, default=None, show_default="根据月份输出 1-12")
-@click.option("-k", "--key", type=(str, str, str), nargs=3, default=None, show_default="根据关键词输出 xx gg zz, limit 3")
+# @click.option("-k", "--key", type=(str, str, str), nargs=3, default=None, show_default="根据关键词输出 xx gg zz, limit 3")
+@click.option("-k", "--key", multiple=True, show_default="-k xx -k yy -k zz")
 def show(all, day, month, key):
     if all:
         click.echo(showjob.show_all_content())
