@@ -4,6 +4,51 @@ Record your past
 ## package
 打包你的文件内容，打包项目文件还是用的pyinstall
 
+```python
+from setuptools import setup, find_packages
+
+setup(
+    name='yourpackage',
+    version='0.1',
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=[
+        'Click',
+    ],
+    entry_points='''
+        [console_scripts]
+        # 相对路径，和setup.py 同级
+        # fp为打包好后的命令名字
+        # 打包好后虚拟环境的bin文件夹下面
+        fp=script:cli
+    ''',
+)
+```
+```python
+source venv/bin/activate
+pip install --editable .
+```
+
+## 自动补全
+
+```bash
+
+eval "$(_{name}_COMPLETE=zsh_source {name})"
+
+_{name}_COMPLETE=zsh_source {name} > ~/.{name}-complete.zsh
+. ~/.{namd}-complete.zsh
+```
+name为你的命令名字 比如上面打包的是fp,则
+```bash
+# 在.zshrc 下面写入
+eval "$(_{fp}_COMPLETE=zsh_source {fp})"
+# 执行
+_{fp}_COMPLETE=zsh_source {fp} > ~/.{fp}-complete.zsh
+# 激活
+. ~/.{fp}-complete.zsh
+```
+
+bash同样操作， 把zsh改成bash就可以了
 
 
 ## example
